@@ -1,0 +1,3357 @@
+2026-03-02 11:29:56,811 [INFO] Session started
+2026-03-02 11:29:56,811 [INFO] Using model: openai-gpt-oss-120b  base_url: https://chat-ai.academiccloud.de/v1
+2026-03-02 11:30:14,561 [INFO] run_pipeline started | goal='what is the version of our kubernetes' max_retries=3 dry_run=False
+2026-03-02 11:30:14,562 [INFO] --- Attempt 1/3 ---
+2026-03-02 11:30:14,562 [INFO] Current goal: what is the version of our kubernetes
+2026-03-02 11:30:14,562 [INFO] [Planner] generating tasks...
+2026-03-02 11:30:16,966 [INFO]   Task 1: Get nodes
+2026-03-02 11:30:16,966 [INFO] [Executor] running tasks...
+2026-03-02 11:30:16,966 [DEBUG]   Executing task: Get nodes
+2026-03-02 11:30:16,980 [INFO]   Command : kubectl get nodes
+2026-03-02 11:30:16,980 [INFO]   Success : True
+2026-03-02 11:30:16,980 [DEBUG]   Output  : [
+  {
+    "metadata": {
+      "name": "aks-agentpool-26722002-vmss0000bb",
+      "selfLink": "/api/v1/nodes/aks-agentpool-26722002-vmss0000bb",
+      "uid": "7933317b-7f41-43c1-b17a-bb1f51244d35",
+      "resourceVersion": "108427685",
+      "creationTimestamp": "2026-03-02T09:22:45Z",
+      "labels": {
+        "agentpool": "agentpool",
+        "beta.kubernetes.io/arch": "amd64",
+        "beta.kubernetes.io/instance-type": "Standard_F2s_v2",
+        "beta.kubernetes.io/os": "linux",
+        "failure-domain.beta.kubernetes.io/region": "eastus2",
+        "failure-domain.beta.kubernetes.io/zone": "eastus2-2",
+        "kubernetes.azure.com/cluster": "MC_camerite-plataform-production_camerite-plataform-productionz",
+        "kubernetes.azure.com/node-image-version": "AKSUbuntu-1604-2020.03.05",
+        "kubernetes.azure.com/role": "agent",
+        "kubernetes.io/arch": "amd64",
+        "kubernetes.io/hostname": "aks-agentpool-26722002-vmss0000bb",
+        "kubernetes.io/os": "linux",
+        "kubernetes.io/role": "agent",
+        "node-role.kubernetes.io/agent": "",
+        "storageprofile": "managed",
+        "storagetier": "Premium_LRS"
+      },
+      "annotations": {
+        "node.alpha.kubernetes.io/ttl": "0",
+        "volumes.kubernetes.io/controller-managed-attach-detach": "true"
+      }
+    },
+    "spec": {
+      "providerID": "azure:///subscriptions/3b5a688b-c118-4b17-a167-3e8d04449b8d/resourceGroups/mc_camerite-plataform-production_camerite-plataform-production_eastus2/providers/Microsoft.Compute/virtualMachineScaleSets/aks-agentpool-26722002-vmss/virtualMachines/407"
+    },
+    "status": {
+      "capacity": {
+        "attachable-volumes-azure-disk": "4",
+        "cpu": "2",
+        "ephemeral-storage": "50633320Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "memory": "4017252Ki",
+        "pods": "100"
+      },
+      "allocatable": {
+        "attachable-volumes-azure-disk": "4",
+        "cpu": "1900m",
+        "ephemeral-storage": "46663667635",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "memory": "2200676Ki",
+        "pods": "100"
+      },
+      "conditions": [
+        {
+          "type": "MemoryPressure",
+          "status": "False",
+          "lastHeartbeatTime": "2021-02-23T20:38:26Z",
+          "lastTransitionTime": "2021-02-16T08:46:03Z",
+          "reason": "KubeletHasSufficientMemory",
+          "message": "kubelet has sufficient memory available"
+        },
+        {
+          "type": "DiskPressure",
+          "status": "False",
+          "lastHeartbeatTime": "2021-02-23T20:38:26Z",
+          "lastTransitionTime": "2021-02-16T08:46:03Z",
+          "reason": "KubeletHasNoDiskPressure",
+          "message": "kubelet has no disk pressure"
+        },
+        {
+          "type": "PIDPressure",
+          "status": "False",
+          "lastHeartbeatTime": "2021-02-23T20:38:26Z",
+          "lastTransitionTime": "2021-02-16T08:46:03Z",
+          "reason": "KubeletHasSufficientPID",
+          "message": "kubelet has sufficient PID available"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastHeartbeatTime": "2021-02-23T20:38:26Z",
+          "lastTransitionTime": "2021-02-16T08:46:03Z",
+          "reason": "KubeletReady",
+          "message": "kubelet is posting ready status. AppArmor enabled"
+        }
+      ],
+      "addresses": [
+        {
+          "type": "Hostname",
+          "address": "aks-agentpool-26722002-vmss0000bb"
+        },
+        {
+          "type": "InternalIP",
+          "address": "10.20.6.84"
+        }
+      ],
+      "daemonEndpoints": {
+        "kubeletEndpoint": {
+          "Port": 10250
+        }
+      },
+      "nodeInfo": {
+        "machineID": "203108ea171f44bfbfe31830340427d6",
+        "systemUUID": "01A28068-4EFD-244A-8624-3D148927BF5C",
+        "bootID": "54981b9f-947e-4376-a225-0f9d61bfd50f",
+        "kernelVersion": "4.15.0-1071-azure",
+        "osImage": "Ubuntu 16.04.6 LTS",
+        "containerRuntimeVersion": "docker://3.0.10+azure",
+        "kubeletVersion": "v1.14.8",
+        "kubeProxyVersion": "v1.14.8",
+        "operatingSystem": "linux",
+        "architecture": "amd64"
+      },
+      "images": [
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:08ce7ac99db7a4a400633f8a2c5706e6cea6bda7088fbe2a75f88ba6b27f0d9b",
+            "plataformproductionacr.azurecr.io/app:4732"
+          ],
+          "sizeBytes": 783182988
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:4dc1e3a6878889175b75946375e78778d6c44aabe846960384d301b01b504a8d",
+            "plataformproductionacr.azurecr.io/app:4255"
+          ],
+          "sizeBytes": 780426232
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:6eb8ee75e9d2494db3e2d4fc7f5c9549c5f16b92c4d856fee7fc816ff84d5b34",
+            "plataformproductionacr.azurecr.io/app:4254"
+          ],
+          "sizeBytes": 780391921
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:1f9cb573d8871917cd7ba993d3d9ffd8cb40a0f201c3e9eac02604da026d31b5",
+            "plataformproductionacr.azurecr.io/app:4253"
+          ],
+          "sizeBytes": 780384044
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:3d2dd62947ab569bb9f7e346a0d542b194866754c5e5e108a258b80583bb0605",
+            "plataformproductionacr.azurecr.io/app:4247"
+          ],
+          "sizeBytes": 780339878
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:c7f1f943caf2c18a18626d769da26a557b876990ebc27e56301635be0680bd19",
+            "plataformproductionacr.azurecr.io/app:4235"
+          ],
+          "sizeBytes": 780103011
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:0228710d12b74195fdbfdc3b7ab9fb46519dba62c9d1278734c4c6242d0877db",
+            "plataformproductionacr.azurecr.io/app:4191"
+          ],
+          "sizeBytes": 780041086
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:a5a4da11de4698fe1233b5fd31c463b7688c73e8c0e950ee38070db255a2ea3f",
+            "plataformproductionacr.azurecr.io/app:4185"
+          ],
+          "sizeBytes": 779843261
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:4867b6fb77eb85bb1b27ddc04b60e5578c1ec41cf8fb575cb65732011aa3b817",
+            "plataformproductionacr.azurecr.io/app:4164"
+          ],
+          "sizeBytes": 779833042
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:f1844b3b998bbb7cd61a5ffae76ba55be6d73b3d5f2034fa8776ba3ed4c98a1a",
+            "plataformproductionacr.azurecr.io/app:4140"
+          ],
+          "sizeBytes": 779787604
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:d265acfc1874783897a1db9129eedab86aecea83ccb3e73f2d9f647895e1a014",
+            "plataformproductionacr.azurecr.io/app:4934"
+          ],
+          "sizeBytes": 773667094
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:aa698babb58bb9f7c93bd6e5b9c665758ab6398b3f51ade06d376c0b2796e2e1",
+            "plataformproductionacr.azurecr.io/app:4915"
+          ],
+          "sizeBytes": 773644432
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:97dbf1d8bd0a8493aefb295a3301ac76710061a58fb33a668a0d7c2d31f6dcf6",
+            "plataformproductionacr.azurecr.io/app:4907"
+          ],
+          "sizeBytes": 773625633
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/oss/kubernetes/hyperkube@sha256:27355a15ddc5834100c225979b92b6b6e30c1691a1433d2636911df9326e9f83",
+            "mcr.microsoft.com/oss/kubernetes/hyperkube:v1.14.8-hotfix.20200529.1"
+          ],
+          "sizeBytes": 770490271
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod@sha256:a01860de0830e460c7b1f80c75a204390a1c837bdaccdc9dc298d166529f1ce6",
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod:ciprod01112021"
+          ],
+          "sizeBytes": 554653119
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod@sha256:92023bbf142c777915fbef5feeac9bb23a692c7d802090bb081666f77edb5c38",
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod:ciprod11092020"
+          ],
+          "sizeBytes": 544233220
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod@sha256:526f024b02d88809bc3bdc998943e1f2cc25bb9dbbf82eb159a346b7f4138506",
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod:ciprod10272020"
+          ],
+          "sizeBytes": 540739090
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod@sha256:532c608ad5e68f78ec73ca95ea5d985edd80aada10a8fcd9afd04caee10218de",
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod:ciprod10052020"
+          ],
+          "sizeBytes": 540403962
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod@sha256:780131d482cbbf9c2b221c307f699fbbe2ced9ffad74083ea6565cdabd5c91f4",
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod:ciprod08072020"
+          ],
+          "sizeBytes": 536621814
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod@sha256:e5a5787184e6405980bf9c38a6f05137996547d9f02ee3a5af047929b32a940c",
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod:ciprod07152020"
+          ],
+          "sizeBytes": 429070490
+        },
+        {
+          "names": [
+            "us.gcr.io/k8s-artifacts-prod/ingress-nginx/controller@sha256:0e072dddd1f7f8fc8909a2ca6f65e76c5f0d2fcfb8be47935ae3457e8bbceb20",
+            "us.gcr.io/k8s-artifacts-prod/ingress-nginx/controller:v0.34.1"
+          ],
+          "sizeBytes": 328878603
+        },
+        {
+          "names": [
+            "quay.io/kubernetes-ingress-controller/nginx-ingress-controller@sha256:b312c91d0de688a21075078982b5e3a48b13b46eda4df743317d3059fc3ca0d9",
+            "quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.30.0"
+          ],
+          "sizeBytes": 322915865
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/containernetworking/azure-npm@sha256:2a72c55556655834dadbe856cdf3a325325c893dc67ca5b9e7a1e198662a55fe",
+            "mcr.microsoft.com/containernetworking/azure-npm:v1.1.8"
+          ],
+          "sizeBytes": 179364698
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/containernetworking/azure-npm@sha256:3652926fdb4afba317377076726100b4c5670ee2ed297d3fd676e08a2cf32325",
+            "mcr.microsoft.com/containernetworking/azure-npm:v1.1.7"
+          ],
+          "sizeBytes": 152192978
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/containernetworking/azure-npm@sha256:0f2443de9f11d3e0d16bdc836d152cbbf3a4ba3309ca30f6d5ca65f8051b8095",
+            "mcr.microsoft.com/containernetworking/azure-npm:v1.1.5"
+          ],
+          "sizeBytes": 151205567
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/containernetworking/azure-npm@sha256:d1ef2bebbb62bf9f97c7d51d6d799c673d638b78ac4eae51c71268b1bbab9209",
+            "mcr.microsoft.com/containernetworking/azure-npm:v1.1.4"
+          ],
+          "sizeBytes": 132464587
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/containernetworking/networkmonitor@sha256:0cfe44a07bf7405ff5e9573ef1aabf3c7df034ffa6d626a9bd470da98eb8559a",
+            "mcr.microsoft.com/containernetworking/networkmonitor:v1.1.8"
+          ],
+          "sizeBytes": 124708650
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/oss/kubernetes/kubernetes-dashboard@sha256:dca7e06333b41acd5ba4c6554d93d7b57cf74a1f2c90a72dbbe39cbb40f86979",
+            "mcr.microsoft.com/oss/kubernetes/kubernetes-dashboard:v1.10.1"
+          ],
+          "sizeBytes": 121711221
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/containernetworking/networkmonitor@sha256:1ab5ce423894918c4fd7ec5533837e943dc0fb4c762c3f751486359348d4f8c9",
+            "mcr.microsoft.com/containernetworking/networkmonitor:v0.0.7"
+          ],
+          "sizeBytes": 104673601
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/oss/kubernetes/ip-masq-agent@sha256:c25e53d5a32b1ae09750774307d2b5790893ccea5480d990cb57aa6ac35c5f9a",
+            "mcr.microsoft.com/oss/kubernetes/ip-masq-agent:v2.5.0.2"
+          ],
+          "sizeBytes": 59464125
+        },
+        {
+          "names": [
+            "quay.io/jetstack/cert-manager-controller@sha256:7928d472d4abc001d289e438170a61fc5cf004f736d874ce9cb68e3e4a6c9e48",
+            "quay.io/jetstack/cert-manager-controller:v0.9.1"
+          ],
+          "sizeBytes": 51771795
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/oss/kubernetes/ip-masq-agent@sha256:bddf19be25644c7176e8c501465dbad07d032288334f135877b984660b0d3ee6",
+            "mcr.microsoft.com/oss/kubernetes/ip-masq-agent:v2.5.0"
+          ],
+          "sizeBytes": 50148508
+        },
+        {
+          "names": [
+            "quay.io/jetstack/cert-manager-cainjector@sha256:3123cd2427ea1988fb1f6b8d7c7c9dc2ba1d423e2f9e7e66a495b921ea5b509c",
+            "quay.io/jetstack/cert-manager-cainjector:v0.8.0"
+          ],
+          "sizeBytes": 44756002
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/oss/kubernetes/coredns@sha256:fe1a122eeca3beaf643c19aeba64b9e1834235da76e1f5be604ad25b57e95398",
+            "mcr.microsoft.com/oss/kubernetes/coredns:1.6.6"
+          ],
+          "sizeBytes": 40853219
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/oss/kubernetes/autoscaler/cluster-proportional-autoscaler@sha256:1be911b269aba912facbbdcdd33ffeb091bd4b4b326c979f24ab21d9b85dc395",
+            "mcr.microsoft.com/oss/kubernetes/autoscaler/cluster-proportional-autoscaler:1.7.1-hotfix.20200403"
+          ],
+          "sizeBytes": 40682655
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/oss/kubernetes/metrics-server@sha256:47042a74b6968faeb1ea3fcabddf5319d003586c6019fe981675ea151e629484",
+            "mcr.microsoft.com/oss/kubernetes/metrics-server:v0.3.6"
+          ],
+          "sizeBytes": 39944451
+        },
+        {
+          "names": [
+            "quay.io/jetstack/cert-manager-acmesolver@sha256:46a3fd5d52723054031de11b7093a3cd092d1df7d92b58d53e27cee799546ef4",
+            "quay.io/jetstack/cert-manager-acmesolver:v0.8.0"
+          ],
+          "sizeBytes": 32788026
+        },
+        {
+          "names": [
+            "quay.io/jetstack/cert-manager-acmesolver@sha256:3d9b9ea7e6514468354e79c7f8885247729ebf997a2ad07fb03b9ee15369a38d",
+            "quay.io/jetstack/cert-manager-acmesolver:v0.9.1"
+          ],
+          "sizeBytes": 30089727
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/k8s/core/pause@sha256:6666771bdc36e6c335f8bfcc1976fc0624c1dd9bc9fa9793ea27ccd6de5e4289",
+            "mcr.microsoft.com/k8s/core/pause:1.2.0"
+          ],
+          "sizeBytes": 738384
+        }
+      ],
+      "config": {}
+    }
+  }
+]
+2026-03-02 11:30:16,980 [INFO] [Validator] checking goal achievement...
+2026-03-02 11:30:18,898 [INFO]   Achieved : True
+2026-03-02 11:30:18,898 [INFO]   Reason   : The node information includes the Kubernetes version (`v1.14.8`), fulfilling the request.
+2026-03-02 11:30:18,898 [INFO]   Corrective action: None
+2026-03-02 11:30:18,898 [INFO] Goal achieved!
+2026-03-02 11:30:47,507 [INFO] run_pipeline started | goal='make a simple node called eww' max_retries=3 dry_run=False
+2026-03-02 11:30:47,507 [INFO] --- Attempt 1/3 ---
+2026-03-02 11:30:47,508 [INFO] Current goal: make a simple node called eww
+2026-03-02 11:30:47,508 [INFO] [Planner] generating tasks...
+2026-03-02 11:30:50,934 [INFO] [Executor] running tasks...
+2026-03-02 11:30:50,934 [INFO] [Validator] checking goal achievement...
+2026-03-02 11:30:53,740 [INFO]   Achieved : False
+2026-03-02 11:30:53,740 [INFO]   Reason   : No tasks were defined or executed, so the node "eww" was never created.
+2026-03-02 11:30:53,740 [INFO]   Corrective action: 1. Define the specific environment (e.g., ROS, Node.js, etc.) for the node.  
+2. Create a task list, such as:  
+   - Install required dependencies.  
+   - Write the source code for a minimal node named `eww`.  
+   - Build/compile the node (if applicable).  
+   - Run the node to verify it starts correctly.  
+3. Execute the tasks and capture the results.  
+4. Provide the results for evaluation.
+2026-03-02 11:30:53,740 [WARNING] Not achieved. Corrective action: 1. Define the specific environment (e.g., ROS, Node.js, etc.) for the node.  
+2. Create a task list, such as:  
+   - Install required dependencies.  
+   - Write the source code for a minimal node named `eww`.  
+   - Build/compile the node (if applicable).  
+   - Run the node to verify it starts correctly.  
+3. Execute the tasks and capture the results.  
+4. Provide the results for evaluation.
+2026-03-02 11:30:53,740 [INFO] --- Attempt 2/3 ---
+2026-03-02 11:30:53,740 [INFO] Current goal: make a simple node called eww
+
+Previous attempt 1 failed.
+Corrective action required: 1. Define the specific environment (e.g., ROS, Node.js, etc.) for the node.  
+2. Create a task list, such as:  
+   - Install required dependencies.  
+   - Write the source code for a minimal node named `eww`.  
+   - Build/compile the node (if applicable).  
+   - Run the node to verify it starts correctly.  
+3. Execute the tasks and capture the results.  
+4. Provide the results for evaluation.
+2026-03-02 11:30:53,740 [INFO] [Planner] generating tasks...
+2026-03-02 11:30:57,848 [INFO]   Task 1: Get nodes
+2026-03-02 11:30:57,848 [INFO]   Task 2: Create pod eww in namespace production using image busybox and command ["sh","-c","echo Hello from eww && sleep 3600"]
+2026-03-02 11:30:57,849 [INFO]   Task 3: Get pods in namespace production
+2026-03-02 11:30:57,849 [INFO] [Executor] running tasks...
+2026-03-02 11:30:57,849 [DEBUG]   Executing task: Get nodes
+2026-03-02 11:30:57,859 [INFO]   Command : kubectl get nodes
+2026-03-02 11:30:57,859 [INFO]   Success : True
+2026-03-02 11:30:57,859 [DEBUG]   Output  : [
+  {
+    "metadata": {
+      "name": "aks-agentpool-26722002-vmss0000bb",
+      "selfLink": "/api/v1/nodes/aks-agentpool-26722002-vmss0000bb",
+      "uid": "7933317b-7f41-43c1-b17a-bb1f51244d35",
+      "resourceVersion": "108427685",
+      "creationTimestamp": "2026-03-02T09:22:45Z",
+      "labels": {
+        "agentpool": "agentpool",
+        "beta.kubernetes.io/arch": "amd64",
+        "beta.kubernetes.io/instance-type": "Standard_F2s_v2",
+        "beta.kubernetes.io/os": "linux",
+        "failure-domain.beta.kubernetes.io/region": "eastus2",
+        "failure-domain.beta.kubernetes.io/zone": "eastus2-2",
+        "kubernetes.azure.com/cluster": "MC_camerite-plataform-production_camerite-plataform-productionz",
+        "kubernetes.azure.com/node-image-version": "AKSUbuntu-1604-2020.03.05",
+        "kubernetes.azure.com/role": "agent",
+        "kubernetes.io/arch": "amd64",
+        "kubernetes.io/hostname": "aks-agentpool-26722002-vmss0000bb",
+        "kubernetes.io/os": "linux",
+        "kubernetes.io/role": "agent",
+        "node-role.kubernetes.io/agent": "",
+        "storageprofile": "managed",
+        "storagetier": "Premium_LRS"
+      },
+      "annotations": {
+        "node.alpha.kubernetes.io/ttl": "0",
+        "volumes.kubernetes.io/controller-managed-attach-detach": "true"
+      }
+    },
+    "spec": {
+      "providerID": "azure:///subscriptions/3b5a688b-c118-4b17-a167-3e8d04449b8d/resourceGroups/mc_camerite-plataform-production_camerite-plataform-production_eastus2/providers/Microsoft.Compute/virtualMachineScaleSets/aks-agentpool-26722002-vmss/virtualMachines/407"
+    },
+    "status": {
+      "capacity": {
+        "attachable-volumes-azure-disk": "4",
+        "cpu": "2",
+        "ephemeral-storage": "50633320Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "memory": "4017252Ki",
+        "pods": "100"
+      },
+      "allocatable": {
+        "attachable-volumes-azure-disk": "4",
+        "cpu": "1900m",
+        "ephemeral-storage": "46663667635",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "memory": "2200676Ki",
+        "pods": "100"
+      },
+      "conditions": [
+        {
+          "type": "MemoryPressure",
+          "status": "False",
+          "lastHeartbeatTime": "2021-02-23T20:38:26Z",
+          "lastTransitionTime": "2021-02-16T08:46:03Z",
+          "reason": "KubeletHasSufficientMemory",
+          "message": "kubelet has sufficient memory available"
+        },
+        {
+          "type": "DiskPressure",
+          "status": "False",
+          "lastHeartbeatTime": "2021-02-23T20:38:26Z",
+          "lastTransitionTime": "2021-02-16T08:46:03Z",
+          "reason": "KubeletHasNoDiskPressure",
+          "message": "kubelet has no disk pressure"
+        },
+        {
+          "type": "PIDPressure",
+          "status": "False",
+          "lastHeartbeatTime": "2021-02-23T20:38:26Z",
+          "lastTransitionTime": "2021-02-16T08:46:03Z",
+          "reason": "KubeletHasSufficientPID",
+          "message": "kubelet has sufficient PID available"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastHeartbeatTime": "2021-02-23T20:38:26Z",
+          "lastTransitionTime": "2021-02-16T08:46:03Z",
+          "reason": "KubeletReady",
+          "message": "kubelet is posting ready status. AppArmor enabled"
+        }
+      ],
+      "addresses": [
+        {
+          "type": "Hostname",
+          "address": "aks-agentpool-26722002-vmss0000bb"
+        },
+        {
+          "type": "InternalIP",
+          "address": "10.20.6.84"
+        }
+      ],
+      "daemonEndpoints": {
+        "kubeletEndpoint": {
+          "Port": 10250
+        }
+      },
+      "nodeInfo": {
+        "machineID": "203108ea171f44bfbfe31830340427d6",
+        "systemUUID": "01A28068-4EFD-244A-8624-3D148927BF5C",
+        "bootID": "54981b9f-947e-4376-a225-0f9d61bfd50f",
+        "kernelVersion": "4.15.0-1071-azure",
+        "osImage": "Ubuntu 16.04.6 LTS",
+        "containerRuntimeVersion": "docker://3.0.10+azure",
+        "kubeletVersion": "v1.14.8",
+        "kubeProxyVersion": "v1.14.8",
+        "operatingSystem": "linux",
+        "architecture": "amd64"
+      },
+      "images": [
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:08ce7ac99db7a4a400633f8a2c5706e6cea6bda7088fbe2a75f88ba6b27f0d9b",
+            "plataformproductionacr.azurecr.io/app:4732"
+          ],
+          "sizeBytes": 783182988
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:4dc1e3a6878889175b75946375e78778d6c44aabe846960384d301b01b504a8d",
+            "plataformproductionacr.azurecr.io/app:4255"
+          ],
+          "sizeBytes": 780426232
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:6eb8ee75e9d2494db3e2d4fc7f5c9549c5f16b92c4d856fee7fc816ff84d5b34",
+            "plataformproductionacr.azurecr.io/app:4254"
+          ],
+          "sizeBytes": 780391921
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:1f9cb573d8871917cd7ba993d3d9ffd8cb40a0f201c3e9eac02604da026d31b5",
+            "plataformproductionacr.azurecr.io/app:4253"
+          ],
+          "sizeBytes": 780384044
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:3d2dd62947ab569bb9f7e346a0d542b194866754c5e5e108a258b80583bb0605",
+            "plataformproductionacr.azurecr.io/app:4247"
+          ],
+          "sizeBytes": 780339878
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:c7f1f943caf2c18a18626d769da26a557b876990ebc27e56301635be0680bd19",
+            "plataformproductionacr.azurecr.io/app:4235"
+          ],
+          "sizeBytes": 780103011
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:0228710d12b74195fdbfdc3b7ab9fb46519dba62c9d1278734c4c6242d0877db",
+            "plataformproductionacr.azurecr.io/app:4191"
+          ],
+          "sizeBytes": 780041086
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:a5a4da11de4698fe1233b5fd31c463b7688c73e8c0e950ee38070db255a2ea3f",
+            "plataformproductionacr.azurecr.io/app:4185"
+          ],
+          "sizeBytes": 779843261
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:4867b6fb77eb85bb1b27ddc04b60e5578c1ec41cf8fb575cb65732011aa3b817",
+            "plataformproductionacr.azurecr.io/app:4164"
+          ],
+          "sizeBytes": 779833042
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:f1844b3b998bbb7cd61a5ffae76ba55be6d73b3d5f2034fa8776ba3ed4c98a1a",
+            "plataformproductionacr.azurecr.io/app:4140"
+          ],
+          "sizeBytes": 779787604
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:d265acfc1874783897a1db9129eedab86aecea83ccb3e73f2d9f647895e1a014",
+            "plataformproductionacr.azurecr.io/app:4934"
+          ],
+          "sizeBytes": 773667094
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:aa698babb58bb9f7c93bd6e5b9c665758ab6398b3f51ade06d376c0b2796e2e1",
+            "plataformproductionacr.azurecr.io/app:4915"
+          ],
+          "sizeBytes": 773644432
+        },
+        {
+          "names": [
+            "plataformproductionacr.azurecr.io/app@sha256:97dbf1d8bd0a8493aefb295a3301ac76710061a58fb33a668a0d7c2d31f6dcf6",
+            "plataformproductionacr.azurecr.io/app:4907"
+          ],
+          "sizeBytes": 773625633
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/oss/kubernetes/hyperkube@sha256:27355a15ddc5834100c225979b92b6b6e30c1691a1433d2636911df9326e9f83",
+            "mcr.microsoft.com/oss/kubernetes/hyperkube:v1.14.8-hotfix.20200529.1"
+          ],
+          "sizeBytes": 770490271
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod@sha256:a01860de0830e460c7b1f80c75a204390a1c837bdaccdc9dc298d166529f1ce6",
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod:ciprod01112021"
+          ],
+          "sizeBytes": 554653119
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod@sha256:92023bbf142c777915fbef5feeac9bb23a692c7d802090bb081666f77edb5c38",
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod:ciprod11092020"
+          ],
+          "sizeBytes": 544233220
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod@sha256:526f024b02d88809bc3bdc998943e1f2cc25bb9dbbf82eb159a346b7f4138506",
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod:ciprod10272020"
+          ],
+          "sizeBytes": 540739090
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod@sha256:532c608ad5e68f78ec73ca95ea5d985edd80aada10a8fcd9afd04caee10218de",
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod:ciprod10052020"
+          ],
+          "sizeBytes": 540403962
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod@sha256:780131d482cbbf9c2b221c307f699fbbe2ced9ffad74083ea6565cdabd5c91f4",
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod:ciprod08072020"
+          ],
+          "sizeBytes": 536621814
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod@sha256:e5a5787184e6405980bf9c38a6f05137996547d9f02ee3a5af047929b32a940c",
+            "mcr.microsoft.com/azuremonitor/containerinsights/ciprod:ciprod07152020"
+          ],
+          "sizeBytes": 429070490
+        },
+        {
+          "names": [
+            "us.gcr.io/k8s-artifacts-prod/ingress-nginx/controller@sha256:0e072dddd1f7f8fc8909a2ca6f65e76c5f0d2fcfb8be47935ae3457e8bbceb20",
+            "us.gcr.io/k8s-artifacts-prod/ingress-nginx/controller:v0.34.1"
+          ],
+          "sizeBytes": 328878603
+        },
+        {
+          "names": [
+            "quay.io/kubernetes-ingress-controller/nginx-ingress-controller@sha256:b312c91d0de688a21075078982b5e3a48b13b46eda4df743317d3059fc3ca0d9",
+            "quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.30.0"
+          ],
+          "sizeBytes": 322915865
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/containernetworking/azure-npm@sha256:2a72c55556655834dadbe856cdf3a325325c893dc67ca5b9e7a1e198662a55fe",
+            "mcr.microsoft.com/containernetworking/azure-npm:v1.1.8"
+          ],
+          "sizeBytes": 179364698
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/containernetworking/azure-npm@sha256:3652926fdb4afba317377076726100b4c5670ee2ed297d3fd676e08a2cf32325",
+            "mcr.microsoft.com/containernetworking/azure-npm:v1.1.7"
+          ],
+          "sizeBytes": 152192978
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/containernetworking/azure-npm@sha256:0f2443de9f11d3e0d16bdc836d152cbbf3a4ba3309ca30f6d5ca65f8051b8095",
+            "mcr.microsoft.com/containernetworking/azure-npm:v1.1.5"
+          ],
+          "sizeBytes": 151205567
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/containernetworking/azure-npm@sha256:d1ef2bebbb62bf9f97c7d51d6d799c673d638b78ac4eae51c71268b1bbab9209",
+            "mcr.microsoft.com/containernetworking/azure-npm:v1.1.4"
+          ],
+          "sizeBytes": 132464587
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/containernetworking/networkmonitor@sha256:0cfe44a07bf7405ff5e9573ef1aabf3c7df034ffa6d626a9bd470da98eb8559a",
+            "mcr.microsoft.com/containernetworking/networkmonitor:v1.1.8"
+          ],
+          "sizeBytes": 124708650
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/oss/kubernetes/kubernetes-dashboard@sha256:dca7e06333b41acd5ba4c6554d93d7b57cf74a1f2c90a72dbbe39cbb40f86979",
+            "mcr.microsoft.com/oss/kubernetes/kubernetes-dashboard:v1.10.1"
+          ],
+          "sizeBytes": 121711221
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/containernetworking/networkmonitor@sha256:1ab5ce423894918c4fd7ec5533837e943dc0fb4c762c3f751486359348d4f8c9",
+            "mcr.microsoft.com/containernetworking/networkmonitor:v0.0.7"
+          ],
+          "sizeBytes": 104673601
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/oss/kubernetes/ip-masq-agent@sha256:c25e53d5a32b1ae09750774307d2b5790893ccea5480d990cb57aa6ac35c5f9a",
+            "mcr.microsoft.com/oss/kubernetes/ip-masq-agent:v2.5.0.2"
+          ],
+          "sizeBytes": 59464125
+        },
+        {
+          "names": [
+            "quay.io/jetstack/cert-manager-controller@sha256:7928d472d4abc001d289e438170a61fc5cf004f736d874ce9cb68e3e4a6c9e48",
+            "quay.io/jetstack/cert-manager-controller:v0.9.1"
+          ],
+          "sizeBytes": 51771795
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/oss/kubernetes/ip-masq-agent@sha256:bddf19be25644c7176e8c501465dbad07d032288334f135877b984660b0d3ee6",
+            "mcr.microsoft.com/oss/kubernetes/ip-masq-agent:v2.5.0"
+          ],
+          "sizeBytes": 50148508
+        },
+        {
+          "names": [
+            "quay.io/jetstack/cert-manager-cainjector@sha256:3123cd2427ea1988fb1f6b8d7c7c9dc2ba1d423e2f9e7e66a495b921ea5b509c",
+            "quay.io/jetstack/cert-manager-cainjector:v0.8.0"
+          ],
+          "sizeBytes": 44756002
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/oss/kubernetes/coredns@sha256:fe1a122eeca3beaf643c19aeba64b9e1834235da76e1f5be604ad25b57e95398",
+            "mcr.microsoft.com/oss/kubernetes/coredns:1.6.6"
+          ],
+          "sizeBytes": 40853219
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/oss/kubernetes/autoscaler/cluster-proportional-autoscaler@sha256:1be911b269aba912facbbdcdd33ffeb091bd4b4b326c979f24ab21d9b85dc395",
+            "mcr.microsoft.com/oss/kubernetes/autoscaler/cluster-proportional-autoscaler:1.7.1-hotfix.20200403"
+          ],
+          "sizeBytes": 40682655
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/oss/kubernetes/metrics-server@sha256:47042a74b6968faeb1ea3fcabddf5319d003586c6019fe981675ea151e629484",
+            "mcr.microsoft.com/oss/kubernetes/metrics-server:v0.3.6"
+          ],
+          "sizeBytes": 39944451
+        },
+        {
+          "names": [
+            "quay.io/jetstack/cert-manager-acmesolver@sha256:46a3fd5d52723054031de11b7093a3cd092d1df7d92b58d53e27cee799546ef4",
+            "quay.io/jetstack/cert-manager-acmesolver:v0.8.0"
+          ],
+          "sizeBytes": 32788026
+        },
+        {
+          "names": [
+            "quay.io/jetstack/cert-manager-acmesolver@sha256:3d9b9ea7e6514468354e79c7f8885247729ebf997a2ad07fb03b9ee15369a38d",
+            "quay.io/jetstack/cert-manager-acmesolver:v0.9.1"
+          ],
+          "sizeBytes": 30089727
+        },
+        {
+          "names": [
+            "mcr.microsoft.com/k8s/core/pause@sha256:6666771bdc36e6c335f8bfcc1976fc0624c1dd9bc9fa9793ea27ccd6de5e4289",
+            "mcr.microsoft.com/k8s/core/pause:1.2.0"
+          ],
+          "sizeBytes": 738384
+        }
+      ],
+      "config": {}
+    }
+  }
+]
+2026-03-02 11:30:57,859 [DEBUG]   Executing task: Create pod eww in namespace production using image busybox and command ["sh","-c","echo Hello from eww && sleep 3600"]
+2026-03-02 11:31:02,207 [INFO]   Command : kubectl run eww --image=busybox -n production --restart=Never --command -- sh -c "echo Hello from eww && sleep 3600"
+2026-03-02 11:31:02,207 [INFO]   Success : True
+2026-03-02 11:31:02,208 [DEBUG]   Output  : {
+  "status": "Success"
+}
+2026-03-02 11:31:02,208 [DEBUG]   Executing task: Get pods in namespace production
+2026-03-02 11:31:03,809 [INFO]   Command : kubectl get pods -n production
+2026-03-02 11:31:03,809 [INFO]   Success : True
+2026-03-02 11:31:03,809 [DEBUG]   Output  : [
+  {
+    "metadata": {
+      "labels": {
+        "app": "web-deploy"
+      },
+      "name": "web-deploy-aa2d2255",
+      "namespace": "production",
+      "selfLink": "/api/v1/namespaces/production/pods/web-deploy-aa2d2255",
+      "uid": "da2f39c3-6be8-4190-8e82-47916d5eac22",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:26:34Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "web-deploy",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": "/apis/extensions/v1beta1/namespaces/production/deployments/web-deploy"
+  },
+  {
+    "metadata": {
+      "name": "nginx-pod",
+      "namespace": "production",
+      "labels": {
+        "app": "nginx-pod"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/nginx-pod",
+      "uid": "ec1b4af8-eb25-496b-a425-0e41a80bbef2",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:42:14Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "nginx-pod",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  },
+  {
+    "metadata": {
+      "labels": {
+        "app": "web-deploy"
+      },
+      "name": "web-deploy-12ee6548",
+      "namespace": "production",
+      "selfLink": "/api/v1/namespaces/production/pods/web-deploy-12ee6548",
+      "uid": "d664364a-00aa-44cc-8bb9-c10ddc46d07f",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:46:08Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "web-deploy",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": "/apis/extensions/v1beta1/namespaces/production/deployments/web-deploy"
+  },
+  {
+    "metadata": {
+      "name": "nginx-pod",
+      "namespace": "production",
+      "labels": {
+        "app": "nginx-pod"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/nginx-pod",
+      "uid": "f7733bf3-f942-4558-96e9-5a5c0ba61d00",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T10:23:24Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "nginx-pod",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  },
+  {
+    "metadata": {
+      "name": "eww",
+      "namespace": "production",
+      "labels": {
+        "app": "eww"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/eww",
+      "uid": "9e7862e7-3761-4f1b-8713-e2d48ed10672",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T10:31:02Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "eww",
+          "image": "busybox"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  }
+]
+2026-03-02 11:31:03,809 [INFO] [Validator] checking goal achievement...
+2026-03-02 11:31:09,832 [INFO]   Achieved : True
+2026-03-02 11:31:09,832 [INFO]   Reason   : The pod `eww` exists and is running in the target namespace, satisfying the requirement.
+2026-03-02 11:31:09,832 [INFO]   Corrective action: None
+2026-03-02 11:31:09,832 [INFO] Goal achieved!
+2026-03-02 11:31:22,124 [INFO] run_pipeline started | goal='list out all the pods we have running' max_retries=3 dry_run=False
+2026-03-02 11:31:22,124 [INFO] --- Attempt 1/3 ---
+2026-03-02 11:31:22,124 [INFO] Current goal: list out all the pods we have running
+2026-03-02 11:31:22,124 [INFO] [Planner] generating tasks...
+2026-03-02 11:31:24,586 [INFO]   Task 1: Get pods in the `production` namespace
+2026-03-02 11:31:24,586 [INFO] [Executor] running tasks...
+2026-03-02 11:31:24,586 [DEBUG]   Executing task: Get pods in the `production` namespace
+2026-03-02 11:31:25,580 [INFO]   Command : kubectl get pods -n production
+2026-03-02 11:31:25,581 [INFO]   Success : True
+2026-03-02 11:31:25,581 [DEBUG]   Output  : [
+  {
+    "metadata": {
+      "labels": {
+        "app": "web-deploy"
+      },
+      "name": "web-deploy-aa2d2255",
+      "namespace": "production",
+      "selfLink": "/api/v1/namespaces/production/pods/web-deploy-aa2d2255",
+      "uid": "da2f39c3-6be8-4190-8e82-47916d5eac22",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:26:34Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "web-deploy",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": "/apis/extensions/v1beta1/namespaces/production/deployments/web-deploy"
+  },
+  {
+    "metadata": {
+      "name": "nginx-pod",
+      "namespace": "production",
+      "labels": {
+        "app": "nginx-pod"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/nginx-pod",
+      "uid": "ec1b4af8-eb25-496b-a425-0e41a80bbef2",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:42:14Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "nginx-pod",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  },
+  {
+    "metadata": {
+      "labels": {
+        "app": "web-deploy"
+      },
+      "name": "web-deploy-12ee6548",
+      "namespace": "production",
+      "selfLink": "/api/v1/namespaces/production/pods/web-deploy-12ee6548",
+      "uid": "d664364a-00aa-44cc-8bb9-c10ddc46d07f",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:46:08Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "web-deploy",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": "/apis/extensions/v1beta1/namespaces/production/deployments/web-deploy"
+  },
+  {
+    "metadata": {
+      "name": "nginx-pod",
+      "namespace": "production",
+      "labels": {
+        "app": "nginx-pod"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/nginx-pod",
+      "uid": "f7733bf3-f942-4558-96e9-5a5c0ba61d00",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T10:23:24Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "nginx-pod",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  },
+  {
+    "metadata": {
+      "name": "eww",
+      "namespace": "production",
+      "labels": {
+        "app": "eww"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/eww",
+      "uid": "9e7862e7-3761-4f1b-8713-e2d48ed10672",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T10:31:02Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "eww",
+          "image": "busybox"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  }
+]
+2026-03-02 11:31:25,581 [INFO] [Validator] checking goal achievement...
+2026-03-02 11:31:29,700 [INFO]   Achieved : False
+2026-03-02 11:31:29,700 [INFO]   Reason   : Only pods from the `production` namespace were fetched; pods in other namespaces were not included, so the list is not exhaustive.
+2026-03-02 11:31:29,701 [INFO]   Corrective action: Run a query that includes every namespace, e.g.:
+
+```
+kubectl get pods --all-namespaces -o json
+```
+
+Then extract and present the names (and optionally namespaces) of all pods that are in the `Running` phase.
+2026-03-02 11:31:29,701 [WARNING] Not achieved. Corrective action: Run a query that includes every namespace, e.g.:
+
+```
+kubectl get pods --all-namespaces -o json
+```
+
+Then extract and present the names (and optionally namespaces) of all pods that are in the `Running` phase.
+2026-03-02 11:31:29,701 [INFO] --- Attempt 2/3 ---
+2026-03-02 11:31:29,701 [INFO] Current goal: list out all the pods we have running
+
+Previous attempt 1 failed.
+Corrective action required: Run a query that includes every namespace, e.g.:
+
+```
+kubectl get pods --all-namespaces -o json
+```
+
+Then extract and present the names (and optionally namespaces) of all pods that are in the `Running` phase.
+2026-03-02 11:31:29,701 [INFO] [Planner] generating tasks...
+2026-03-02 11:31:33,237 [INFO]   Task 1: Execute `kubectl get pods --all-namespaces -o json` to retrieve all pod objects in JSON format.
+2026-03-02 11:31:33,237 [INFO]   Task 2: Parse the JSON output and filter the items where `.status.phase` is `"Running"`.
+2026-03-02 11:31:33,237 [INFO]   Task 3: For each filtered pod, extract the `.metadata.namespace` and `.metadata.name` fields and output them as a list of `<namespace>/<pod-name>` entries.
+2026-03-02 11:31:33,237 [INFO] [Executor] running tasks...
+2026-03-02 11:31:33,238 [DEBUG]   Executing task: Execute `kubectl get pods --all-namespaces -o json` to retrieve all pod objects in JSON format.
+2026-03-02 11:31:34,960 [INFO]   Command : kubectl get pods --all-namespaces -o json
+2026-03-02 11:31:34,960 [INFO]   Success : True
+2026-03-02 11:31:34,960 [DEBUG]   Output  : [
+  {
+    "metadata": {
+      "labels": {
+        "app": "web-deploy"
+      },
+      "name": "web-deploy-aa2d2255",
+      "namespace": "production",
+      "selfLink": "/api/v1/namespaces/production/pods/web-deploy-aa2d2255",
+      "uid": "da2f39c3-6be8-4190-8e82-47916d5eac22",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:26:34Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "web-deploy",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": "/apis/extensions/v1beta1/namespaces/production/deployments/web-deploy"
+  },
+  {
+    "metadata": {
+      "name": "nginx-pod",
+      "namespace": "production",
+      "labels": {
+        "app": "nginx-pod"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/nginx-pod",
+      "uid": "ec1b4af8-eb25-496b-a425-0e41a80bbef2",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:42:14Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "nginx-pod",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  },
+  {
+    "metadata": {
+      "labels": {
+        "app": "web-deploy"
+      },
+      "name": "web-deploy-12ee6548",
+      "namespace": "production",
+      "selfLink": "/api/v1/namespaces/production/pods/web-deploy-12ee6548",
+      "uid": "d664364a-00aa-44cc-8bb9-c10ddc46d07f",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:46:08Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "web-deploy",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": "/apis/extensions/v1beta1/namespaces/production/deployments/web-deploy"
+  },
+  {
+    "metadata": {
+      "name": "nginx-pod",
+      "namespace": "production",
+      "labels": {
+        "app": "nginx-pod"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/nginx-pod",
+      "uid": "f7733bf3-f942-4558-96e9-5a5c0ba61d00",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T10:23:24Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "nginx-pod",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  },
+  {
+    "metadata": {
+      "name": "eww",
+      "namespace": "production",
+      "labels": {
+        "app": "eww"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/eww",
+      "uid": "9e7862e7-3761-4f1b-8713-e2d48ed10672",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T10:31:02Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "eww",
+          "image": "busybox"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  }
+]
+2026-03-02 11:31:34,960 [DEBUG]   Executing task: Parse the JSON output and filter the items where `.status.phase` is `"Running"`.
+2026-03-02 11:31:37,774 [INFO]   Command : kubectl get pods --all-namespaces --field-selector status.phase=Running -o json
+2026-03-02 11:31:37,774 [INFO]   Success : True
+2026-03-02 11:31:37,774 [DEBUG]   Output  : [
+  {
+    "metadata": {
+      "labels": {
+        "app": "web-deploy"
+      },
+      "name": "web-deploy-aa2d2255",
+      "namespace": "production",
+      "selfLink": "/api/v1/namespaces/production/pods/web-deploy-aa2d2255",
+      "uid": "da2f39c3-6be8-4190-8e82-47916d5eac22",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:26:34Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "web-deploy",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": "/apis/extensions/v1beta1/namespaces/production/deployments/web-deploy"
+  },
+  {
+    "metadata": {
+      "name": "nginx-pod",
+      "namespace": "production",
+      "labels": {
+        "app": "nginx-pod"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/nginx-pod",
+      "uid": "ec1b4af8-eb25-496b-a425-0e41a80bbef2",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:42:14Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "nginx-pod",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  },
+  {
+    "metadata": {
+      "labels": {
+        "app": "web-deploy"
+      },
+      "name": "web-deploy-12ee6548",
+      "namespace": "production",
+      "selfLink": "/api/v1/namespaces/production/pods/web-deploy-12ee6548",
+      "uid": "d664364a-00aa-44cc-8bb9-c10ddc46d07f",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:46:08Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "web-deploy",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": "/apis/extensions/v1beta1/namespaces/production/deployments/web-deploy"
+  },
+  {
+    "metadata": {
+      "name": "nginx-pod",
+      "namespace": "production",
+      "labels": {
+        "app": "nginx-pod"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/nginx-pod",
+      "uid": "f7733bf3-f942-4558-96e9-5a5c0ba61d00",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T10:23:24Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "nginx-pod",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  },
+  {
+    "metadata": {
+      "name": "eww",
+      "namespace": "production",
+      "labels": {
+        "app": "eww"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/eww",
+      "uid": "9e7862e7-3761-4f1b-8713-e2d48ed10672",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T10:31:02Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "eww",
+          "image": "busybox"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  }
+]
+2026-03-02 11:31:37,774 [DEBUG]   Executing task: For each filtered pod, extract the `.metadata.namespace` and `.metadata.name` fields and output them as a list of `<namespace>/<pod-name>` entries.
+2026-03-02 11:31:41,407 [INFO]   Command : kubectl get pods --all-namespaces -o jsonpath='{range .items[?(@.status.phase=="Running")]}{.metadata.namespace}/{.metadata.name}{"\n"}{end}'
+2026-03-02 11:31:41,407 [INFO]   Success : True
+2026-03-02 11:31:41,407 [DEBUG]   Output  : [
+  {
+    "metadata": {
+      "labels": {
+        "app": "web-deploy"
+      },
+      "name": "web-deploy-aa2d2255",
+      "namespace": "production",
+      "selfLink": "/api/v1/namespaces/production/pods/web-deploy-aa2d2255",
+      "uid": "da2f39c3-6be8-4190-8e82-47916d5eac22",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:26:34Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "web-deploy",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": "/apis/extensions/v1beta1/namespaces/production/deployments/web-deploy"
+  },
+  {
+    "metadata": {
+      "name": "nginx-pod",
+      "namespace": "production",
+      "labels": {
+        "app": "nginx-pod"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/nginx-pod",
+      "uid": "ec1b4af8-eb25-496b-a425-0e41a80bbef2",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:42:14Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "nginx-pod",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  },
+  {
+    "metadata": {
+      "labels": {
+        "app": "web-deploy"
+      },
+      "name": "web-deploy-12ee6548",
+      "namespace": "production",
+      "selfLink": "/api/v1/namespaces/production/pods/web-deploy-12ee6548",
+      "uid": "d664364a-00aa-44cc-8bb9-c10ddc46d07f",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:46:08Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "web-deploy",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": "/apis/extensions/v1beta1/namespaces/production/deployments/web-deploy"
+  },
+  {
+    "metadata": {
+      "name": "nginx-pod",
+      "namespace": "production",
+      "labels": {
+        "app": "nginx-pod"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/nginx-pod",
+      "uid": "f7733bf3-f942-4558-96e9-5a5c0ba61d00",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T10:23:24Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "nginx-pod",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  },
+  {
+    "metadata": {
+      "name": "eww",
+      "namespace": "production",
+      "labels": {
+        "app": "eww"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/eww",
+      "uid": "9e7862e7-3761-4f1b-8713-e2d48ed10672",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T10:31:02Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "eww",
+          "image": "busybox"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  }
+]
+2026-03-02 11:31:41,408 [INFO] [Validator] checking goal achievement...
+2026-03-02 11:31:46,356 [INFO]   Achieved : False
+2026-03-02 11:31:46,356 [INFO]   Reason   : The final result contains complete pod JSON objects rather than a plain list of `<namespace>/<pod-name>` entries as specified.
+2026-03-02 11:31:46,356 [INFO]   Corrective action: Run a corrected jsonpath (or process the JSON) to output only the desired strings, e.g.:
+
+```bash
+kubectl get pods --all-namespaces -o jsonpath='{range .items[?(@.status.phase=="Running")]}{.metadata.namespace}/{.metadata.name}{"\n"}{end}'
+```
+
+or parse the JSON from Task 2 in code to generate the list. Then provide the resulting list of lines.
+2026-03-02 11:31:46,356 [WARNING] Not achieved. Corrective action: Run a corrected jsonpath (or process the JSON) to output only the desired strings, e.g.:
+
+```bash
+kubectl get pods --all-namespaces -o jsonpath='{range .items[?(@.status.phase=="Running")]}{.metadata.namespace}/{.metadata.name}{"\n"}{end}'
+```
+
+or parse the JSON from Task 2 in code to generate the list. Then provide the resulting list of lines.
+2026-03-02 11:31:46,356 [INFO] --- Attempt 3/3 ---
+2026-03-02 11:31:46,356 [INFO] Current goal: list out all the pods we have running
+
+Previous attempt 2 failed.
+Corrective action required: Run a corrected jsonpath (or process the JSON) to output only the desired strings, e.g.:
+
+```bash
+kubectl get pods --all-namespaces -o jsonpath='{range .items[?(@.status.phase=="Running")]}{.metadata.namespace}/{.metadata.name}{"\n"}{end}'
+```
+
+or parse the JSON from Task 2 in code to generate the list. Then provide the resulting list of lines.
+2026-03-02 11:31:46,356 [INFO] [Planner] generating tasks...
+2026-03-02 11:31:49,203 [INFO]   Task 1: Execute `kubectl get pods --all-namespaces -o jsonpath='{range .items[?(@.status.phase=="Running")]}{.metadata.namespace}/{.metadata.name}{"\n"}{end}'` to produce a list of all running pods, one per line.
+2026-03-02 11:31:49,203 [INFO] [Executor] running tasks...
+2026-03-02 11:31:49,203 [DEBUG]   Executing task: Execute `kubectl get pods --all-namespaces -o jsonpath='{range .items[?(@.status.phase=="Running")]}{.metadata.namespace}/{.metadata.name}{"\n"}{end}'` to produce a list of all running pods, one per line.
+2026-03-02 11:31:52,424 [INFO]   Command : kubectl get pods --all-namespaces -o jsonpath='{range .items[?(@.status.phase=="Running")]}{.metadata.namespace}/{.metadata.name}{"\n"}{end}'
+2026-03-02 11:31:52,424 [INFO]   Success : True
+2026-03-02 11:31:52,424 [DEBUG]   Output  : [
+  {
+    "metadata": {
+      "labels": {
+        "app": "web-deploy"
+      },
+      "name": "web-deploy-aa2d2255",
+      "namespace": "production",
+      "selfLink": "/api/v1/namespaces/production/pods/web-deploy-aa2d2255",
+      "uid": "da2f39c3-6be8-4190-8e82-47916d5eac22",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:26:34Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "web-deploy",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": "/apis/extensions/v1beta1/namespaces/production/deployments/web-deploy"
+  },
+  {
+    "metadata": {
+      "name": "nginx-pod",
+      "namespace": "production",
+      "labels": {
+        "app": "nginx-pod"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/nginx-pod",
+      "uid": "ec1b4af8-eb25-496b-a425-0e41a80bbef2",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:42:14Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "nginx-pod",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  },
+  {
+    "metadata": {
+      "labels": {
+        "app": "web-deploy"
+      },
+      "name": "web-deploy-12ee6548",
+      "namespace": "production",
+      "selfLink": "/api/v1/namespaces/production/pods/web-deploy-12ee6548",
+      "uid": "d664364a-00aa-44cc-8bb9-c10ddc46d07f",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T09:46:08Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "web-deploy",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": "/apis/extensions/v1beta1/namespaces/production/deployments/web-deploy"
+  },
+  {
+    "metadata": {
+      "name": "nginx-pod",
+      "namespace": "production",
+      "labels": {
+        "app": "nginx-pod"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/nginx-pod",
+      "uid": "f7733bf3-f942-4558-96e9-5a5c0ba61d00",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T10:23:24Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "nginx-pod",
+          "image": "nginx:latest"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  },
+  {
+    "metadata": {
+      "name": "eww",
+      "namespace": "production",
+      "labels": {
+        "app": "eww"
+      },
+      "selfLink": "/api/v1/namespaces/production/pods/eww",
+      "uid": "9e7862e7-3761-4f1b-8713-e2d48ed10672",
+      "resourceVersion": "103524551",
+      "creationTimestamp": "2026-03-02T10:31:02Z"
+    },
+    "spec": {
+      "containers": [
+        {
+          "name": "eww",
+          "image": "busybox"
+        }
+      ]
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:52Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-08T14:45:05Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2021-02-06T01:47:51Z"
+        }
+      ],
+      "hostIP": "10.20.4.91",
+      "podIP": "10.20.4.154",
+      "startTime": "2021-02-06T01:47:52Z",
+      "containerStatuses": [
+        {
+          "name": "app",
+          "state": {
+            "running": {
+              "startedAt": "2021-02-08T14:44:39Z"
+            }
+          },
+          "lastState": {
+            "terminated": {
+              "exitCode": 137,
+              "reason": "Error",
+              "startedAt": "2021-02-06T22:26:28Z",
+              "finishedAt": "2021-02-08T14:44:37Z",
+              "containerID": "docker://1a2c158e0182bc4f9db9f75b61c680c8dee38cbf62d09c054a95cf314d004f20"
+            }
+          },
+          "ready": true,
+          "restartCount": 2,
+          "image": "plataformproductionacr.azurecr.io/app:7513",
+          "imageID": "docker-pullable://plataformproductionacr.azurecr.io/app@sha256:c86f51fdc36e49378c762e965d8d3412f36657a89c71f1984ec34ccc53cf0ae2",
+          "containerID": "docker://fef3c93c47cf1d1c086f6350352dd915e9c083536f278b776da6efb11d518d32"
+        }
+      ],
+      "qosClass": "Burstable"
+    },
+    "parent": null
+  }
+]
+2026-03-02 11:31:52,424 [INFO] [Validator] checking goal achievement...
+2026-03-02 11:31:58,804 [INFO]   Achieved : False
+2026-03-02 11:31:58,804 [INFO]   Reason   : The command output returned detailed JSON objects instead of the expected plain list of `namespace/pod-name` entries, so the goal of “list out all the pods we have running” in the specified format was not met.
+2026-03-02 11:31:58,804 [INFO]   Corrective action: Re‑run the command (or post‑process the current output) to extract only the namespace and pod name, e.g.:
+
+```bash
+kubectl get pods --all-namespaces -o jsonpath='{range .items[?(@.status.phase=="Running")]}{.metadata.namespace}/{.metadata.name}{"\n"}{end}'
+```
+
+or pipe the existing JSON through `jq`:
+
+```bash
+kubectl get pods --all-namespaces -o json | jq -r '.items[] | select(.status.phase=="Running") | "\(.metadata.namespace)/\(.metadata.name)"'
+```
+
+Capture the resulting plain list and present it as the final answer.
+2026-03-02 11:31:58,805 [WARNING] Not achieved. Corrective action: Re‑run the command (or post‑process the current output) to extract only the namespace and pod name, e.g.:
+
+```bash
+kubectl get pods --all-namespaces -o jsonpath='{range .items[?(@.status.phase=="Running")]}{.metadata.namespace}/{.metadata.name}{"\n"}{end}'
+```
+
+or pipe the existing JSON through `jq`:
+
+```bash
+kubectl get pods --all-namespaces -o json | jq -r '.items[] | select(.status.phase=="Running") | "\(.metadata.namespace)/\(.metadata.name)"'
+```
+
+Capture the resulting plain list and present it as the final answer.
+2026-03-02 11:31:58,805 [ERROR] Goal not achieved after 3 attempts.

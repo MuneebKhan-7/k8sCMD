@@ -1,8 +1,10 @@
-# Project HPCSA - TODO
+## Commands to Run for Testing 
+List all nodes and pods running in the production namespace
 
-- [x] Plan and modules
-- [ ] Get LLM.py ready and functional
-- [ ] Get DSPy running and make all calls to LLM via it to test it
-- [ ] Get Agents module working
-- [ ] Set up k8s faker and test whole project
-- [ ] Set up actual k8s system and get it running
+Deploy a Redis pod named redis-cache in the production namespace and verify it is running
+
+Create a deployment called web-app using the nginx image in the production namespace with 1 replica
+
+Delete the nginx-pod from the production namespace and confirm it no longer exists
+
+Deploy a pod named api-server using the httpd image in production, then create an ingress called api-ingress that routes traffic to it

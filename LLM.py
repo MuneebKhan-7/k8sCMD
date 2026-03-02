@@ -1,6 +1,6 @@
 import os
+import requests
 from dotenv import load_dotenv
-from openai import OpenAI
 from typing import Dict, Any
 
 
@@ -32,16 +32,17 @@ class LLM:
         self.timeout = 10
         
         # Get API endpoint from environment variables
-        self.base_url = os.getenv("GWDG_MODEL_URL", "")
+        self.base_url = os.getenv("GWDG_MODEL_URL", "https://chat-ai.academiccloud.de/v1")
         
         # Get API key from environment variables
         self.api_key = os.getenv("GWDG_MODEL_API_KEY", "")
         
-        # Initialize OpenAI client with GWDG-specific configuration
-        self.client = OpenAI(
-            api_key=self.api_key,
-            base_url=self.base_url
-        )
+        # Build reusable headers for all requests
+        self.headers = {
+            "Accept": "application/json",
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json",
+        }
         
         # Default system prompt that defines the LLM's behavior
         self.system_prompt = "You are a useful and helpful assistant."
@@ -58,19 +59,25 @@ class LLM:
         # Try multiple times based on self.retries
         for attempt in range(self.retries):
             try:
-                # Create a chat completion request using the OpenAI client
-                response = self.client.chat.completions.create(
-                    model=self.model,
-                    messages=[
+                payload = {
+                    "model": self.model,
+                    "messages": [
                         {"role": "system", "content": self.system_prompt},
                         {"role": "user", "content": query}
                     ],
-                    temperature=0.2,
-                    stream=False
+                    "temperature": 0.2,
+                }
+                response = requests.post(
+                    f"{self.base_url}/chat/completions",
+                    headers=self.headers,
+                    json=payload,
+                    timeout=self.timeout,
                 )
+                response.raise_for_status()
+                data = response.json()
                 
                 # Extract and return the response content
-                result = response.choices[0].message.content
+                result = data["choices"][0]["message"]["content"]
                 return result
                 
             except Exception as e:
@@ -105,10 +112,16 @@ class LLM:
         """
         try:
             # Get a list of available models from the API
-            models = self.client.models.list()
+            response = requests.get(
+                f"{self.base_url}/models",
+                headers=self.headers,
+                timeout=self.timeout,
+            )
+            response.raise_for_status()
+            data = response.json()
             
             # Extract the model IDs
-            available_model_ids = [model.id for model in models.data]
+            available_model_ids = [m["id"] for m in data.get("data", [])]
             
             # Check if the requested model is available
             if self.model in available_model_ids:
