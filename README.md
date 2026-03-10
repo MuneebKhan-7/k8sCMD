@@ -4,8 +4,7 @@
 
 ## Demo Video
 
-<video src="https://github.com/SadafShafi/k8sCMD/raw/main/short%20demo.mp4" controls="controls" style="max-width: 100%;">
-  Your browser does not support the video tag.
+<video src="https://raw.githubusercontent.com/SadafShafi/k8sCMD/main/short%20demo.mp4" controls="controls" style="max-width: 100%;">
 </video>
 
 ---
