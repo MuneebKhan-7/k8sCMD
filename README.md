@@ -2,6 +2,10 @@
 
 > **k8sCMD** is an AI-powered Kubernetes command system. You describe what you want in plain English and the system plans, executes, validates, and explains the result — all against a real (or mock) Kubernetes cluster.
 
+## Demo Video
+
+🎥 **[Watch the k8sCMD Demo Video](./short%20demo.mp4)**
+
 ---
 
 ## Table of Contents
