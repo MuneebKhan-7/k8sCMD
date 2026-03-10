@@ -4,7 +4,9 @@
 
 ## Demo Video
 
-🎥 **[Watch the k8sCMD Demo Video](./short%20demo.mp4)**
+<video src="https://github.com/SadafShafi/k8sCMD/raw/main/short%20demo.mp4" controls="controls" style="max-width: 100%;">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
