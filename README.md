@@ -4,7 +4,7 @@
 
 ## Demo Video
 
-<video src="https://raw.githubusercontent.com/SadafShafi/k8sCMD/main/short%20demo.mp4" controls="controls" style="max-width: 100%;">
+<video src="./short%20demo.mp4" controls="controls" style="max-width: 100%;">
 </video>
 
 ---
