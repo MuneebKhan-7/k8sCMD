@@ -8,6 +8,10 @@
   Your browser does not support the video tag.
 </video>
 
+## Deep Wiki
+
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/SadafShafi/k8sCMD)
+
 ---
 
 
